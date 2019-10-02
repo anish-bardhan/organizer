@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Workload Organizer</title>
+  </head>
+  <body>
+    {% include 'components/_navbar.html' %}
+    <div class="jumbotron">
+      <h1 class="display-4"><b>Workload Organizer</b></h1>
+      <p class="lead">A simple way to manage all of your orders in one place.</p>
+      <hr class="my-4">
+      <p>It uses smart Python algorithms that do the hard work for you, just input the order ID and item and Workload Organizer will do the rest</p>
+    </div>
+    {% block body %}
+    <form method="POST" action="/">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Order ID</label>
+        <input name="order_id" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Order ID">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Order Item</label>
+        <input name="order_item" type="text" class="form-control" id="exampleInputPassword1" placeholder="Order Item">
+      </div>
+      <button name="submit" type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Number</th>
+          <th scope="col">Day</th>
+          <th scope="col">Order id</th>
+          <th scope="col">Order time</th>
+          <th scope="col">Order Items</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>{{ out[0] }}</td>
+          <td>{{ out[1] }}</td>
+          <td>{{ out[2] }}</td>
+          <td>{{ out[3] }}</td>
+        </tr>
+      </tbody>
+    </table>
+    {% endblock %}
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
